@@ -1,4 +1,4 @@
-# HeadlessOptimizely
+# Headless CMS Optimizely
 Requirements - dotnet SDK -- should install CLI too. 
 Verify you have SDK installed with command 'dotnet' in powershell/cmd.
 
@@ -25,8 +25,8 @@ Below are the steps to setup headless Optimizely CMS on local.
 
 - Step 6. https://github.com/episerver/netcore-preview/blob/master/Quicksilver/EPiServer.Reference.Commerce.Site/Infrastructure/UsersInstaller.cs
 
-  Because this is an empty setup that is why we don't have admin user configured in the database. For that we force and admin user creation via inclusion of above file in the code. Which will create an admin user with below credentials - 
+  Because this is an empty setup that is why we don't have admin user configured in the database. For that we force an admin user creation via inclusion of above file in the code. Which will create an admin user with below credentials - 
 
 - Step 7. Login with admin@example.com/Episerver123!
 
-And if you are here, You have an Headless Optimizely CMS configured successfully.  
+And if you are here, You have an Headless Optimizely CMS configured successfully.  :)
