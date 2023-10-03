@@ -9,7 +9,7 @@ Step 3. dotnet new epicmsempty --name {ProjectName}
 
 Step 4. Getting into directory - cd {ProjectName}
 
-Step 5. dotnet-episerver create-cms-database -S Manoz -E -dn "HeadlessCMS" -du "sandbox" -dp "sandbox" "C:\source\HeadlessOptimizely\HeadlessOptimizely.csproj"
+Step 5. dotnet-episerver create-cms-database -S Manoz -E -dn "HeadlessCMS" -du "sandbox" -dp "sandbox" "C:\...\{root}\{ProjectName}.csproj"
 
 Step 6. https://github.com/episerver/netcore-preview/blob/master/Quicksilver/EPiServer.Reference.Commerce.Site/Infrastructure/UsersInstaller.cs
 Step 7. Login with admin@example.com/Episerver123!
