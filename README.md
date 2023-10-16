@@ -1,4 +1,4 @@
-# Headless CMS Optimizely
+# Installing Commerce and CMS with CLI
 Requirements - dotnet SDK -- should install CLI too. 
 Verify you have SDK installed with command 'dotnet' in powershell/cmd.
 
@@ -7,7 +7,7 @@ If not then install any of these listed below in web - https://dotnet.microsoft.
 We are going to install the Episerver Template and CLI module via dotnet CLI we installed above. 
 https://nuget.optimizely.com/package/?id=EPiServer.Net.Templates
 
-Below are the steps to setup headless Optimizely CMS on local. 
+Below are the steps to setup Optimizely CMS on local. 
 
 - Step 1. dotnet new -install EPiServer.Net.Templates --nuget-source https://nuget.optimizely.com/feed/packages.svc/ --force
 
@@ -29,4 +29,23 @@ Below are the steps to setup headless Optimizely CMS on local.
 
 - Step 7. Login with admin@example.com/Episerver123!
 
-And if you are here, You have an Headless Optimizely CMS configured successfully.  :)
+Installing Commerce -
+- Add Package _EPiServer.Commerce_
+Since we have installed CMS with CLIs Go to file Startup.cs find service.AddMvc();
+- Add this to StartUp.cs > ConfigureServices 
+
+    _services.AddCommerce();_
+
+That's it from the setup perspectives. So does that mean all the challenges conquered ? :D 
+Well, Technically yes, But there are runtime settings we are going to do later for example setting up the root page for commerce and CMS, Running pending migrations for commerce, and have them used to query via Postman.
+
+# Enabling Headless for CMS and Commerce
+Up until now we have configured CMS and commerce with CLI commands. This will enable CMS and Commerce admin panels. 
+There will be 404 due to no UI so far as we don't have the views configured in solution (.cshtml). As we are trying the setup to be headless, therefore we don't wish to add views to solution for obvious reason. 
+
+Optimizely introduced [ContentDelivery](https://docs.developers.optimizely.com/content-management-system/v1.5.0-content-delivery-api/docs) APIs couple of years back and it is mature and reliable to work with. 
+All you have to is to install optimizely nuget packages for both channels (CMS, Commerce) -
+- [EPiServer.ContentDeliveryApi.Cms](https://nuget.optimizely.com/?q=EPiServer.ContentDeliveryApi.Cms&s=Popular&r=10&f=All) for CMS headless
+- [EPiServer.ContentDeliveryApi.Commerce](https://nuget.optimizely.com/?q=EPiServer.ContentDeliveryApi.Commerce&s=Popular&r=10&f=All) for Commerce headless
+
+Now when we have these packages installed, We need to register them in pipeline as middleware. 
