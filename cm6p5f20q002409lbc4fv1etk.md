@@ -14,7 +14,7 @@ This blog post addresses a common issue encountered when trying to maintain the 
 
 Imagine you have a page with a content area. Due to specific business requirements, you need to fetch items from the Find index for this content area. However, when these items are indexed in Episerver Find, they lose their original sort order in the results. The challenge is to preserve the original sort order of these items as they appear in the content area.
 
-in below code
+Snipp from the code -
 
 ```csharp
 var parentPage = contentLoader.Get<ParentPageType>(new ContentReference(10), new CultureInfo("en"));
